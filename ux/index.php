@@ -7,7 +7,7 @@
 
   </head>
   <body>
-  <?php include('../LogicaNegocio/conexion.php'); ?>
+  <?php include('../conexion.php'); ?>
   <br>
       <table>
           <tr><h1>Lista de Mediciones</h1></tr>
