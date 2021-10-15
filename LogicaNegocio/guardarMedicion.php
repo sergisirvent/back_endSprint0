@@ -11,9 +11,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){//comprobamos que tipo de peticion REST e
     $jsonData=json_decode($data);
     
     //separamos por parametros la informacion procedente de la logica fake
-    $Medicion=$jsonData->{'Medicion'};;
-    $Longitud=$jsonData->{'Longitud'};;
-    $Latitud=$jsonData->{'Latitud'};;
+    $Medicion=$jsonData->{'Medicion'};
+    $Longitud=$jsonData->{'Longitud'};
+    $Latitud=$jsonData->{'Latitud'};
     
     //montamos la consulta con los parametros y la lanzamos
     $query="INSERT INTO mediciones (Medicion,Longitud,Latitud) VALUES('".$Medicion."','".$Longitud."','".$Latitud."')";
