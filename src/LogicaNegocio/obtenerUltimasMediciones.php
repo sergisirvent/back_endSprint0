@@ -1,8 +1,10 @@
 <?php
-
+//-----------------------------------------------------------
+// Int cuantas --> obtenerUltimasMediciones() --> Lista<MedicionPOJO>
+//-----------------------------------------------------------
 if($_SERVER["REQUEST_METHOD"]=="GET"){//comprobamos que tipo de peticion REST es GET
     
-    require_once '../conexion.php';//accedemos a la conexion de la bbdd
+    require_once '../conexiones/conexion.php';//accedemos a la conexion de la bbdd
     
     
     

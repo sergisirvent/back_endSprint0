@@ -1,8 +1,12 @@
 <?php
+//---------------------------------------------
+//obtenerTodasLasMediciones() --> Lista<MedicionPOJO>
+//---------------------------------------------
+
 
 if($_SERVER["REQUEST_METHOD"]=="GET"){//comprobamos que tipo de peticion REST es
     
-    include '../conexion.php';//accedemos a la conexion de la bbdd
+    include '../conexiones/conexion.php';//accedemos a la conexion de la bbdd
     
     //montamos la consulta con los parametros y la lanzamos
     $query="SELECT * from mediciones";
