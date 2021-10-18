@@ -1,8 +1,19 @@
 <?php
-
+/**
+ * obtenerUltimasMediciones.php
+ * @author Sergi Sirvent Sempere
+ * Fecha: 2021/10
+ *
+ * Metodo de la lógica de negocio que se encarga de devolver de
+ * la base de datos las mediciones que pida el usuario
+ *
+ */
+//-----------------------------------------------------------
+// Int cuantas --> obtenerUltimasMediciones() --> Lista<MedicionPOJO>
+//-----------------------------------------------------------
 if($_SERVER["REQUEST_METHOD"]=="GET"){//comprobamos que tipo de peticion REST es GET
     
-    require_once '../conexion.php';//accedemos a la conexion de la bbdd
+    require_once '../conexiones/conexion.php';//accedemos a la conexion de la bbdd
     
     
     
