@@ -1,4 +1,13 @@
 <?php
+/**
+ * obtenerTodasLasMediciones.php
+ * @author Sergi Sirvent Sempere
+ * Fecha: 2021/10
+ *
+ * Metodo de la lógica de negocio que se encarga de devolver de
+ * la base de datos todas las mediciones
+ *
+ */
 //---------------------------------------------
 //obtenerTodasLasMediciones() --> Lista<MedicionPOJO>
 //---------------------------------------------
