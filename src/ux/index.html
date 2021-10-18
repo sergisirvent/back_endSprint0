@@ -18,50 +18,92 @@
           function mostrarTodasMediciones(){
               // llamo a la función de la lógica (versión fake)
               obtenerTodasLasMediciones(function (err,res) {
-                  if ( err ) {
-                      alert( "Ha habido un error" )
-                      return
+                  var arrayJSON = JSON.parse(res)
+                  console.log(arrayJSON[0].ID)
+                  $("#cuerpo").html("");
+                  for(var i = 0 ; i<arrayJSON.length;i++){
+                      var tr = `<tr>
+                                    <td>`+arrayJSON[i].ID+`</td>
+                                    <td>`+arrayJSON[i].Medicion+`</td>
+                                    <td>`+arrayJSON[i].Longitud+`</td>
+                                    <td>`+arrayJSON[i].Latitud+`</td>
+                                    <td>`+arrayJSON[i].Major+`</td>
+                                    <td>`+arrayJSON[i].Minor+`</td>
+                                </tr>`;
+                      $("#cuerpo").append(tr)
                   }
-                    window.alert(res)
+
               })
           }
       </script>
+      <!-- ---------------------------------------------------- -->
+      <script>
 
+          function mostrarUltimasMediciones(){
+
+
+              if (String.valueOf(document.getElementById("cuantas").value) != " " && document.getElementById("cuantas").value != 0){
+                  let inputValue = document.getElementById("cuantas").value;
+                  //console.log("Cuantas"+inputValue);
+                  // llamo a la función de la lógica (versión fake)
+                  obtenerUltimasMediciones(function (err,res) {
+
+                      var arrayJSON = JSON.parse(res)
+                      console.log(arrayJSON[0].ID)
+                      $("#cuerpo").html("");
+                      for(var i = 0 ; i<arrayJSON.length;i++){
+                          var tr = `<tr>
+                                    <td>`+arrayJSON[i].ID+`</td>
+                                    <td>`+arrayJSON[i].Medicion+`</td>
+                                    <td>`+arrayJSON[i].Longitud+`</td>
+                                    <td>`+arrayJSON[i].Latitud+`</td>
+                                    <td>`+arrayJSON[i].Major+`</td>
+                                    <td>`+arrayJSON[i].Minor+`</td>
+                                </tr>`;
+                          $("#cuerpo").append(tr)
+                      }
+
+                  },inputValue)
+
+
+              }else {
+                  alert("Introduce un valor válido para cuantas")
+              }
+
+
+
+
+          }
+
+
+
+      </script>
+      <!-- ---------------------------------------------------- -->
   </head>
-  <body>
-  <?php include('../conexiones/conexion.php'); ?>
-  <br>
-     <div class="container">
-         <table class="table">
-          <tr><h1>Lista de Mediciones</h1></tr>
-          <tr>
-              <th>ID</th>
-              <th>Medicion</th>
-              <th>Latitud</th>
-              <th>Longitud</th>
-              <th>Major</th>
-              <th>Minor</th>
-              
-          </tr>
+  <body onload="mostrarTodasMediciones()">
+      <?php include('../conexiones/conexion.php'); ?>
+      <br>
+          <div class="container">
+                 <table class="table table-hover" >
+                     <thead>
+                     <th>ID</th>
+                     <th>Medicion</th>
+                     <th>Longitud</th>
+                     <th>Latitud</th>
+                     <th>Major</th>
+                     <th>Minor</th>
+                     </thead>
+                     <tbody id="cuerpo">
+                     </tbody>
+                 </table>
 
-          <?php
-             /*
-          $sql="select * from mediciones";
-          $resultado=mysqli_query($mysql, $sql);
-          
-          while($mostrar=mysqli_fetch_array($resultado)){
-             */
-          ?>
-          
-          <tr>
-
-          </tr>
-          
-
-
-      </table>
-         <button class="button"  onclick="mostrarTodasMediciones()">MostrarTodasLasMediciones</button>
-     </div>
+          </div>
+      <br>
+          <div class="container">
+              <input type="text" id="cuantas">
+              <button type="button" class="btn btn-primary" onclick="mostrarUltimasMediciones()">Mostrar Últimas</button>
+              <button type="button" class="btn btn-primary" onclick="mostrarTodasMediciones()">Mostrar Todas</button>
+          </div>
       
   </body>
 </html>
