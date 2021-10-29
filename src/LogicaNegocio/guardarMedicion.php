@@ -26,11 +26,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){//comprobamos que tipo de peticion REST e
     $Medicion=$jsonData->{'Medicion'};
     $Longitud=$jsonData->{'Longitud'};
     $Latitud=$jsonData->{'Latitud'};
-    $Major=$jsonData->{'Major'};
     $Minor=$jsonData->{'Minor'};
 
     //montamos la consulta con los parametros y la lanzamos
-    $query="INSERT INTO mediciones (Medicion,Longitud,Latitud,Major,Minor) VALUES('".$Medicion."','".$Longitud."','".$Latitud."','".$Major."','".$Minor."')";
+    $query="INSERT INTO mediciones (Medicion,Longitud,Latitud,Minor) VALUES('".$Medicion."','".$Longitud."','".$Latitud."','".$Minor."')";
 $resultado=$mysql->query($query);
 
     //comprobamos si los datos se han almacenado correctamente
