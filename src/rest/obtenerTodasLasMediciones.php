@@ -14,10 +14,6 @@ require_once('../LogicaNegocio/obtenerTodasLasMediciones.php');
 
 //creo una variable que almacene la lista de mediciones
 $listaMediciones = obtenerTodasLasMediciones();
-
 echo $listaMediciones;
-
-
-
 
 ?>
