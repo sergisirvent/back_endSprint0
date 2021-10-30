@@ -39,6 +39,6 @@ function obtenerTodasLasMediciones(cb){
 
     // llamamos *remotamente* al fichero obtenerTodasLasMediciones.php
     // (la verdadera función de la lógica)
-    xmlhttp.open("GET", "../LogicaNegocio/obtenerTodasLasMediciones.php", true)
+    xmlhttp.open("GET", "../rest/obtenerTodasLasMediciones.php", true)
     xmlhttp.send()
 }

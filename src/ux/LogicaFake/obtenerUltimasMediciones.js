@@ -41,6 +41,6 @@ function obtenerUltimasMediciones(cb,cuantas){
     // llamamos *remotamente* al fichero obtenerUltimasMediciones.php
     // (la verdadera función de la lógica)
     //ADEMAS -- le pasamos en la url el parametro de cuantas mediciones quiere el usuario, que hemos obtenido de la bd
-    xmlhttp.open("GET", "../LogicaNegocio/obtenerUltimasMediciones.php?Cuantas="+cuantas, true)
+    xmlhttp.open("GET", "../rest/obtenerUltimasMediciones.php?Cuantas="+cuantas, true)
     xmlhttp.send()
 }
