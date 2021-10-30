@@ -2,7 +2,7 @@
 require_once('../LogicaNegocio/guardarMedicion.php');
 // -------------------------------------------------
 //
-// POST ../rest/diHola.php
+// POST ../rest/guardarMedicion.php
 //
 // medicion:MedicionPOJO -> guardarMedicion()
 //
