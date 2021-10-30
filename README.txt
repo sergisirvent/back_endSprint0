@@ -1,1 +1,1 @@
-Repositorio del proyecto de Git referente al back end del sprint 
+Para iniciar la pagina web y la base de datos iniciar el servidor localhost desde xampp, tanto el servicio Apache como el de SQL
