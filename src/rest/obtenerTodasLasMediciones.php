@@ -1,4 +1,15 @@
+
 <?php
+
+ /**
+* obtenerTodasLasMediciones.php
+* @author Sergi Sirvent Sempere
+* Fecha: 2021/10
+*
+* Metodo de rest que llama al metodo de la logica verdadera obtenerTodasLasMediciones
+*
+*/
+//--------------------------------------------
 require_once('../LogicaNegocio/obtenerTodasLasMediciones.php');
 
 // -------------------------------------------------

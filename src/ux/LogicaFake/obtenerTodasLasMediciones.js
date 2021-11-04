@@ -5,8 +5,7 @@
  * Fecha: 2021/10
  *
  * Metodo de la lógica fake que se
- *
- */
+ 
 //--------------------------------------------
 /**
  * Método de la logicaFake que recibe un callback para comunicarse con el método

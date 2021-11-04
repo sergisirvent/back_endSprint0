@@ -1,3 +1,13 @@
+/**
+* obtenerUltimasLasMediciones.php
+* @author Sergi Sirvent Sempere
+* Fecha: 2021/10
+*
+* Metodo de rest que llama al metodo de la logica verdadera obtenerUltimasLasMediciones
+*
+*/
+//--------------------------------------------
+
 <?php
 require_once('../LogicaNegocio/obtenerUltimasMediciones.php');
 // -------------------------------------------------

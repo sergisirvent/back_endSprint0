@@ -13,11 +13,13 @@
 //---------------------------------------------
 function  obtenerTodasLasMediciones(){
 
-    include '../conexiones/conexion.php';//accedemos a la conexion de la bbdd
+    require_once '../conexiones/conexion.php';//accedemos a la conexion de la bbdd
 
     //montamos la consulta con los parametros y la lanzamos
     $query="SELECT * from mediciones";
-    $resultado=$mysql->query($query);
+
+
+    $resultado= $mysql->query($query);
 
     //variabla que almacenará la respuesta de nuestra peticion
     $datos = array();

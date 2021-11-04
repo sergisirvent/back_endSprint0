@@ -33,10 +33,11 @@
           function mostrarTodasMediciones(){
               // llamo a la función de la lógica (versión fake)
               obtenerTodasLasMediciones(function (err,res) {
-
+                  
+                  console.log("Esto es la array json"+res)
                   var arrayJSON = JSON.parse(res)//almaceno el resultado en un arrayJSON
 
-                  //console.log(arrayJSON[0].ID)
+                  
 
                   /*
                   añadimos los datos del array json a la tabla de nuestro html
