@@ -1,3 +1,5 @@
+
+<?php
 /**
 * guardarMedicion.php
 * @author Sergi Sirvent Sempere
@@ -7,7 +9,6 @@
 *
 */
 //--------------------------------------------
-<?php
 require_once('../LogicaNegocio/guardarMedicion.php');
 // -------------------------------------------------
 //

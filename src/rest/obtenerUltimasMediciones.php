@@ -1,3 +1,6 @@
+
+
+<?php
 /**
 * obtenerUltimasLasMediciones.php
 * @author Sergi Sirvent Sempere
@@ -7,8 +10,6 @@
 *
 */
 //--------------------------------------------
-
-<?php
 require_once('../LogicaNegocio/obtenerUltimasMediciones.php');
 // -------------------------------------------------
 //
