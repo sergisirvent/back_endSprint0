@@ -1,4 +1,14 @@
+
 <?php
+/**
+* guardarMedicion.php
+* @author Sergi Sirvent Sempere
+* Fecha: 2021/10
+*
+* Metodo de rest que llama al metodo de la logica verdadera guardarMedicion
+*
+*/
+//--------------------------------------------
 require_once('../LogicaNegocio/guardarMedicion.php');
 // -------------------------------------------------
 //
