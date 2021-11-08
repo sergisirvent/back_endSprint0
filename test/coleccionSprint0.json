@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "bc79bade-313f-4d9b-b465-2aab3b0d1f93",
+		"name": "BD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ObtenerTodasLasMediciones",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/**\r",
+							" * Autor : Sergi Sirvent Sempere\r",
+							" * Fecha: 11/2021\r",
+							" * Test del metodo obtenerTodasLasMediciones\r",
+							" * \r",
+							" */\r",
+							"\r",
+							"\r",
+							"pm.test(\"La respuesta tiene un cuerpo json\", function () { \r",
+							"     pm.response.to.be.ok; // equivalente a decir que valide que sea 200\r",
+							"     pm.response.to.be.withBody; // body tiene que exitir\r",
+							"     pm.response.to.be.json; // además que sea un JSON válido\r",
+							"});\r",
+							"// Pedimos a nuestro response payload que tengo Content-Type en el header\r",
+							"pm.test(\"Existe un header Content-Type\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"// Y comprobamos que la petición se haya servido en un determinado tiempo\r",
+							"pm.test(\"El tiempo de respuesta es menor 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"//pasamos a json la respuesta\r",
+							"var res_str = pm.response.json();\r",
+							"\r",
+							"\r",
+							"\r",
+							"var Boolean = true;//booleano que si no se cumplen los tests sera falso\r",
+							"\r",
+							"res_str.forEach(function(med) {\r",
+							"\r",
+							"    // Comprobamos una por una si el formato de la medicion de la base de datos es correcta\r",
+							"    if(med.hasOwnProperty(\"ID\")) {\r",
+							"        \r",
+							"    }else{\r",
+							"        Boolean = false;\r",
+							"    } \r",
+							"    // checking if the camera has a property named \"Fisheye\"\r",
+							"    if (med.hasOwnProperty(\"Medicion\")) {\r",
+							"        \r",
+							"       \r",
+							"    }else{\r",
+							"        Boolean = false;\r",
+							"    } \r",
+							"    if (med.hasOwnProperty(\"Longitud\")) {\r",
+							"        \r",
+							"        \r",
+							"    }else{\r",
+							"        Boolean = false;\r",
+							"    } \r",
+							"    if (med.hasOwnProperty(\"Latitud\")) {\r",
+							"        \r",
+							"            \r",
+							"    }else{\r",
+							"        Boolean = false;\r",
+							"    } \r",
+							"    if (med.hasOwnProperty(\"Minor\")) {\r",
+							"        \r",
+							"            \r",
+							"        \r",
+							"    }else{\r",
+							"        Boolean = false;\r",
+							"    } \r",
+							"    \r",
+							"});\r",
+							"if(Boolean){\r",
+							"        pm.test(\"Las mediciones tienen los atributos correctos\", function () {\r",
+							"           \r",
+							"            pm.expect(0).to.eql(0);//le damos el visto bueno ya que el booleano continua en true\r",
+							"        });\r",
+							"    }\r",
+							"\r",
+							"//Imprimimos por pantalla el numero de  mediciones hay en la base de datos\r",
+							"console.log(\"Mediciones en la base de datos ------>>>> \"+Object.keys(res_str).length)\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/back_endSprint0/src/rest/obtenerTodasLasMediciones.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"back_endSprint0",
+						"src",
+						"rest",
+						"obtenerTodasLasMediciones.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GuardarMedicion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/**\r",
+							" * Autor : Sergi Sirvent Sempere\r",
+							" * Fecha: 11/2021\r",
+							" * Test del metodo guardarMedicion\r",
+							" * \r",
+							" */\r",
+							"\r",
+							"pm.test(\"La respuesta de la peticion es 200\", function () { \r",
+							"    \r",
+							"     pm.response.to.be.ok; // equivalente a decir que valide que sea 200\r",
+							"     \r",
+							"});\r",
+							"// Pedimos a nuestro response payload que tengo Content-Type en el header\r",
+							"pm.test(\"El header de Content-Type esta presente\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"Medicion\":1235,\"Latitud\":1234,\"Longitud\":1234,\"Major\":1234,\"Minor\":1234}"
+				},
+				"url": {
+					"raw": "http://localhost/back_endSprint0/src/rest/guardarMedicion.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"back_endSprint0",
+						"src",
+						"rest",
+						"guardarMedicion.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerUltimasMediciones",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/**\r",
+							" * Autor : Sergi Sirvent Sempere\r",
+							" * Fecha: 11/2021\r",
+							" * Test del metodo obtenerUltimasMediciones\r",
+							" * \r",
+							" */\r",
+							"\r",
+							"pm.test(\"La respuesta tiene un cuerpo json\", function () { \r",
+							"     pm.response.to.be.ok; // equivalente a decir que valide que sea 200\r",
+							"     pm.response.to.be.withBody; // body tiene que exitir\r",
+							"     pm.response.to.be.json; // además que sea un JSON válido\r",
+							"});\r",
+							"// Pedimos a nuestro response payload que tengo Content-Type en el header\r",
+							"pm.test(\"El header Content-Type está presente\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"// Y comprobamos que la petición se haya servido en un determinado tiempo\r",
+							"pm.test(\"El tiempo de respuesta es menor a  200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"// Y comprobamos que la petición devuelve dos mediciones\r",
+							"pm.test(\"Obtener Ultimas Devuelve 2 mediciones\",function(){\r",
+							"    pm.expect(Object.keys(pm.response.json()).length).to.be.equal(2);\r",
+							"})\r",
+							"//console.log(Object.keys(pm.response.json()).length);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/back_endSprint0/src/rest/obtenerUltimasMediciones.php?Cuantas=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"back_endSprint0",
+						"src",
+						"rest",
+						"obtenerUltimasMediciones.php"
+					],
+					"query": [
+						{
+							"key": "Cuantas",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
